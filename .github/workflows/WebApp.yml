@@ -22,12 +22,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run:
-        docker build . --file WebApp.Dockerfile --tag ayres/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker tag ayres/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER ayres/oai-embeddings:latest;
-        docker push ayres/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker push ayres/oai-embeddings:latest;
+        docker build . --file WebApp.Dockerfile --tag marceloricciardi/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker tag marceloricciardi/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER marceloricciardi/oai-embeddings:latest;
+        docker push marceloricciardi/oai-embeddings:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push marceloricciardi/oai-embeddings:latest;
         
-        docker build . --file BatchProcess.Dockerfile --tag ayres/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker tag ayres/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER ayres/oai-batch:latest;
-        docker push ayres/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker push ayres/oai-batch:latest;
+        docker build . --file BatchProcess.Dockerfile --tag marceloricciardi/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker tag marceloricciardi/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER marceloricciardi/oai-batch:latest;
+        docker push marceloricciardi/oai-batch:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push marceloricciardi/oai-batch:latest;

@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   web:
-    image: fruocco/oai-embeddings
+    image: marceloricciardi/oai-embeddings
     ports:
       - "8080:80"
     env_file:
@@ -10,7 +10,7 @@ services:
       api:
         condition: service_healthy
   api:
-    image: redis/redis-stack-server:latest
+    image: marceloricciardi/redis-stack-server:latest
     ports:
       - "6379:6379"
     env_file:
@@ -22,7 +22,7 @@ services:
       retries: 5
       start_period: 5s
   batch:
-    image: fruocco/oai-batch:latest
+    image: marceloricciardi/oai-batch:latest
     ports: 
       - "8081:80"
     env_file:
